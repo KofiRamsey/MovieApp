@@ -75,3 +75,50 @@ interface TrendingCardProps {
   movie: TrendingMovie;
   index: number;
 }
+
+interface TVShow {
+  id: number;
+  name: string;
+  poster_path: string;
+  first_air_date: string;
+  vote_average: number;
+  overview: string;
+}
+
+interface TVShowDetails extends TVShow {
+  created_by: {
+    id: number;
+    name: string;
+    profile_path: string;
+  }[];
+  episode_run_time: number[];
+  genres: {
+    id: number;
+    name: string;
+  }[];
+  in_production: boolean;
+  last_air_date: string;
+  number_of_episodes: number;
+  number_of_seasons: number;
+  networks: {
+    id: number;
+    name: string;
+    logo_path: string;
+  }[];
+}
+
+interface Person {
+  id: number;
+  name: string;
+  profile_path: string;
+  known_for_department: string;
+  popularity: number;
+}
+
+interface PersonDetails extends Person {
+  biography: string;
+  birthday: string;
+  deathday: string | null;
+  place_of_birth: string;
+  known_for: (Movie | TVShow)[];
+}

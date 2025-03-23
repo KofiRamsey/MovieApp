@@ -44,6 +44,10 @@ const Save = () => {
     }
   };
 
+  const handleRefresh = () => {
+    loadSavedMovies();
+  };
+
   if (loading) {
     return (
       <SafeAreaView className="bg-primary flex-1 px-5">
@@ -91,6 +95,8 @@ const Save = () => {
             marginBottom: 16,
           }}
           contentContainerStyle={{ paddingBottom: 100 }}
+          onRefresh={handleRefresh}
+          refreshing={loading}
         />
       )}
     </SafeAreaView>
